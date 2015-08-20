@@ -1,4 +1,5 @@
 var stream = require ('stream');
+var fs = require('fs');
 
 var minified = fs.createWriteStream('./dump.css', 'utf8');
 

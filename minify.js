@@ -11,9 +11,9 @@ var string = '';
 
 minifyCSS._transform = function (chunk, encoding, done){
   string += chunk;
-  string = string.replace(/\s/g, "").replace(/(\/\*).*(\*\/)/g, "");
+  string = string.replace(/\s/g, "").replace(/(\/\*)([\s\S]*?)(\*\/)/g, "");
   minified.write(string, 'utf8');
-}
+};
 
 process.stdin
   .pipe(minifyCSS)
